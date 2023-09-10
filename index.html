@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>결혼정보회사 대표 홍보</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navigator {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: none;
+        }
+
+        .navigator a {
+            display: inline-block;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #FF477E;
+            font-size: 15pt;
+            margin-right: 10px;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45%;
+            height: 100vh; /* 화면 높이만큼 설정 */
+            background-image: url('C:\\Users\\KJS\\Desktop\\profile.jpg'); /* 이미지 주소 수정 */
+            background-size: cover;
+            background-position: center;
+            text-align: left;
+        }
+
+        .header h1 {
+            font-size: 100pt;
+            color: #000000;
+            font-weight: bold;
+            position: absolute;
+            top: 30%;
+            left: 85%;
+            transform: translate(-50%, -50%);
+            transform: none;
+            text-align: left;
+            z-index: 1;
+        }
+
+        .contact-button {
+            position: absolute;
+            top: 90%;
+            left:108%;
+            width: 184px;
+            height: 49px;
+            transform: translate(-10%, -2%);
+            background-color: #FF477E;
+            text-align: center;
+            line-height: 49px;
+        }
+
+        .contact-button a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20pt;
+        }
+
+        .intro {
+            position: absolute;
+            top: 60%;
+            left: 52%; /* 화면 가운데에서 시작 */
+            transform: translate(-10%, -2%);
+            font-size: 16pt;
+        }
+
+        /* 두 번째 페이지 스타일 */
+        .second-page {
+            width: 100%;
+            height: 100vh; /* 화면 높이만큼 설정 */
+            background: linear-gradient(to right, #FFFFFF 50%, #FF739D 50%); /* 배경 색상을 반으로 나눠 설정 */
+            display: flex;
+            /*flex-direction: column;
+            justify-content: center;
+            /*align-items: center;*/
+            opacity: 1; /* 초기에 투명하게 설정 */
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+
+
+        .service-heading {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-size: 18pt;
+            font-weight: bold;
+            color: #000000;
+            top: 5%;
+            left: 6.5%;
+            text-align: left;
+        }
+
+        .service-description {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-size: 12t;
+            color: #000000;
+            top: 25%;
+            left: 26%;
+            text-align: left;
+            
+        }
+
+        .rating-heading {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-size: 18pt;
+            font-weight: bold;
+            color: #000000;
+            top: 53%;
+            left: 6.4%;
+            text-align: left;
+        }
+
+        .rating-description {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-size: 12pt;
+            color: #000000;
+            top: 66%;
+            left:26%;
+            text-align: left;
+        }
+        .portfolio{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-size: 18pt;
+            font-weight: bold;
+            color: #000000;
+            top: 5%;
+            left:75%;
+            text-align: left;
+        }
+
+        .slider-container {
+            width: 624px;
+            height: 624px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 10%; /* 원하는 위치로 조절 */
+            margin-left: 60%;
+            margin-right: 10% /* 이미지 슬라이더를 화면 가운데 정렬하려면 추가 */
+            /*margin-right: 20% /* 이미지 슬라이더를 화면 가운데 정렬하려면 추가 */
+        }
+
+        .slider {
+            width: 900px;
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 300px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .slide img {
+            max-width: 624px;
+            max-height: 624px;
+            width: auto; /* 가로 너비 자동 조절 */
+            height: auto;
+        }
+        .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* 버튼 너비 조절 */
+    height: 40px; /* 버튼 높이 조절 */
+    background-color: rgba(255, 255, 255, 0.5); /* 버튼 배경색 */
+    border: none;
+    border-radius: 50%; /* 원 모양 버튼 */
+    cursor: pointer;
+    font-size: 24px; /* 버튼 아이콘 크기 조절 */
+    color: #000;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* 버튼에 호버 시 배경색 변경 */
+}
+
+#prevBtn {
+    left: 10px; /* 이전 버튼 위치 (화면 왼쪽) */
+}
+
+#nextBtn {
+    right: 10px; /* 다음 버튼 위치 (화면 오른쪽) */
+}
+         /* 푸터 스타일 */
+         .footer {
+            
+            height: 161px;
+            width: 100%;
+            background-color: #FFB9CE;
+            text-align: left;
+            padding-left: 20px;
+            padding-top: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            
+        }
+
+        .footer h2 {
+            font-size: 14pt;
+            color: #fff;
+        }
+
+        .footer p {
+            font-size: 12pt;
+            color: #fff;
+        }
+        .footer h3 {
+            font-size: 14pt;
+            color: #fff;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="navigator">
+        <a href="#home">홈</a>
+        <a href="#about">소개</a>
+        <a href="#services">서비스영역</a>
+        <a href="#reviews">고객평가</a>
+        <a href="#portfolio">포트폴리오</a>
+        <a href="#contact">연락처</a>
+    </div>
+
+    <div class="header">
+        <h1>GayeonLee</h1>
+        <div class="contact-button">
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="intro">
+        <p>다른 결혼정보회사와 비교하여 우수한 성혼률, 고객 만족도, 매칭 속도를 제공합니다. 최고의 서비스로 여러분을 돕겠습니다.<br>
+        스크롤하시면 더 많은 정보를 보실 수 있습니다.</p>
+    </div>
+
+    <!-- 두 번째 페이지 -->
+    <div class="second-page">
+        <!-- 이미지 슬라이더 요소와 버튼 요소 -->
+        <div class="slider-container">
+            <!-- 이전 버튼 -->
+            <button id="prevBtn" class="slider-button">&#10094;</button>
+            <div class="slider">
+                <div class="slide"><img src="C:\Users\KJS\Desktop\protfolio_1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="C:\Users\KJS\Desktop\protfollio_2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="C:\Users\KJS\Desktop\protfolio_3.jpg" alt="Image 3"></div>
+            </div>
+            <button id="nextBtn" class="slider-button">&#10095;</button>
+        </div>
+
+        <h2 class="service-heading">서비스영역</h2>
+        <p class="service-description"><b>1. 맞춤 파트너 매칭</b>: 결혼정보회사는 고객의 요구와 기준을 기반으로 적합한 파트너를 매칭해줍니다. <br>이를 위해 개인 프로필, 취향, 가치관 등을 고려하여
+             맞춤 매칭을 제공합니다. <br> 
+             <b>2. 인터뷰와 상담</b>: 고객과의 인터뷰와 상담을 통해 고객의 요구 사항을 이해하고 적절한 조언을 제공합니다. <br>이는 파트너 선정 및 관계 형성에 도움을 줍니다.<br>
+             <b>3. 프로파일 작성 및 사진 촬영</b>: 결혼정보회사는 고객의 프로파일 작성을 지원하고, 효과적인 사진 촬영을 <br>도와 프로파일을 더욱 매력적으로 만들어줍니다.<br>
+             <b>4. 미팅과 데이트 조정</b>: 매치된 파트너 간의 미팅 및 데이트를 조정하고 관리하여 고객이 효과적으로 소통하고 <br>만날 수 있도록 돕습니다.<br>
+             <b>5. 이벤트 및 활동 참여</b>: 일부 결혼정보회사는 소셜 이벤트, 파티, 워크샵 및 활동을 주선하여 고객이 다른 <br>회원들과 소통하고 연락을 유지할 수 있는 기회를 제공합니다.<br>
+            <b>6. 안전 및 개인정보 보호</b>: 고객의 안전과 개인정보 보호를 위한 시스템 및 지원을 제공하여 고객의 신뢰를<br> 유지합니다.<br>
+             <b>7. 결혼 상담과 서포트</b>: 결혼 후 상담 및 서포트를 통해 고객의 결혼 관련 질문에 대답하고 지원합니다. </p>
+        <h2 class="rating-heading">고객평가</h2>
+        <p class="rating-description">"이 결혼정보회사의 대표는 정말로 우리의 요구와 기대를 이해하고 고객 중심의 서비스를<br> 제공해주셨습니다.
+            그의 전문성과 정직한 접근은 우리에게 훌륭한 파트너를  찾는 데 큰 도움이 되었습니다." <br> <br>"이 결혼정보회사는 매우 전문적이고 친절한 상담팀을 보유하고 있어, <br>
+            우리의 요구를 충족시키기 위해 최선을 다해주었습니다." <br><br> "안전과 개인정보 보호 측면에서도 이 회사는 탁월한 서비스를 제공합니다. <br>
+            고객으로서 안심하고 협력할 수 있었습니다."</p>
+        <h2 class = "portfolio"> 포트폴리오</h2>
+            <div class="footer">
+                <h3>&copy;2023 강지수. All rights reserved.</h3>
+                <h2>Contact info.</h2>
+                <p>t. +82 1088888888 <br> m. gy1225@gmail.com</p>
+
+
+            </div>
+    </div>
+    <script defer src="script.js"></script>
+
+
+
+
+</body>
+</html>
